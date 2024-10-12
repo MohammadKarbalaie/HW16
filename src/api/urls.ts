@@ -4,6 +4,11 @@ export const urls = {
       byId: (id: number) => `/posts/${id}`,
     },
     users:{
-        list:"/users"
+        list:"/users",
+        userpost :(userid:number) => `/users/${userid}/posts`
     },
   };
+
+
+
+  

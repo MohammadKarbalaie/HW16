@@ -10,3 +10,4 @@ export interface IPost {
     views: number;
     userId: number;
   }
+
