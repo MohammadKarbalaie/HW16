@@ -10,7 +10,7 @@ export const NavBar: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-50 h-[100vh] ">
+    <div className="bg-gray-50 h-[100vh]">
       <div className="bg-white xl:hidden flex text-gray-800  hover:text-black focus:outline-none focus:text-black justify-between w-full p-6 items-center ">
         <button className="flex justify-between  items-center space-x-3">
           <svg width={34} height={34} viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +37,7 @@ export const NavBar: React.FC = () => {
           </button>
         </div>
       </div>
-      <div id="Main" className={`${show ? "-translate-x-full" : "translate-x-0"} bg-indigo-600  transform  xl:translate-x-0 ease-in-out transition duration-500 flex justify-start items-start w-full sm:w-72   flex-col h-full`}>
+      <div id="Main" className={`${show ? "-translate-x-full" : "translate-x-0"} bg-indigo-600  transform  xl:translate-x-0 ease-in-out transition duration-500 flex justify-start items-start w-full sm:w-72 flex-col h-full`}>
         <button className="hidden  xl:flex  hover:text-black focus:outline-none text-white focus:text-black justify-start px-6 pt-6 items-center space-x-3 w-full">
           <svg width={34} height={34} viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path

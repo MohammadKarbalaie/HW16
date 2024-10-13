@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from "@tanstack/react-query";  
 import { IPost } from '../types/posts.type';  
 import { fetchUsersPost } from '../api/users.api';
+import { UserPosts } from '../components/userpostinfo';
  
 
 export const UserDetail = () => {  
@@ -19,20 +20,18 @@ export const UserDetail = () => {
   if (userPostsQuery.isLoading) return <div>Loading...</div>;  
   if (userPostsQuery.isError) return <div>Error fetching posts</div>;  
 
-  return (  
-    <div>  
-      <h2>Posts by User {userId}</h2>  
-      <div>  
-        {userPostsQuery.data?.posts.map((post: IPost) => (  
-          <div key={post.id}>  
-            <h3>{post.title}</h3>  
-            <p>{post.body}</p>  
-            <button onClick={() => console.log('Show comments for post', post.id)}>  
-              Show Comments  
-            </button>  
-          </div>  
-        ))}  
-      </div>  
-    </div>  
-  );  
+
+
+    return (  
+        <div className="flex flex-col gap-4 py-2 overflow-y-auto px-10">    
+            {userPostsQuery.data?.posts.map((post: IPost) => (   
+                <UserPosts  
+                  key={post.id}
+                  id={post.id}
+                  title={post.title}
+                  body={post.body} 
+                />  
+            ))}  
+        </div>   
+    );   
 };

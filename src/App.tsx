@@ -10,18 +10,14 @@ import { NotFound } from "./pages/not-found";
 import { fetchPostByIdLoader, PostById } from "./pages/post-by-id";  
 import { Userlist } from "./pages/user-list";  
 import { UserDetail } from "./pages/UserDetail"; 
-
+import Home from "./components/home"
 const router = createBrowserRouter([  
   {  
     element: <MainLayout />,  
     children: [  
       {  
         path: "/",  
-        element: (  
-          <div>  
-            <h1>Hello World</h1>  
-          </div>  
-        ),  
+        element:<Home/>, 
       },  
       {  
         path: "posts",  

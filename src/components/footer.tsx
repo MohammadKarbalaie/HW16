@@ -2,8 +2,8 @@
 function Footer() {
     return (
             <div className="w-full border-gray-300 lg:w-11/12 md:w-11/12 lg:mx-auto md:mx-auto bg-gray-900">
-                <div className="container mx-auto">
-                    <div className="w-[1300px] h-[10vh] xl:flex flex-wrap justify-between xl:mt-14 mt-16 pb-6 pl-3 sm:pl-0 font-semibold">
+                <div className="container mx-auto flex justify-center items-center">
+                    <div className="w-[1300px] h-[5vh] xl:flex flex-wrap justify-between xl:mt-5 text-center mt-16 pb-6 pl-3 sm:pl-0 font-semibold">
                         <div className="w-12/12 xl:w-2/6 mx-auto lg:mx-0 xl:mx-0 mb-6 xl:mb-0 text-lg">
                             <p className="text-white">2024 The North. All Rights Reserved</p>
                         </div>
