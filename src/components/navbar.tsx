@@ -75,8 +75,10 @@ export const NavBar: React.FC = () => {
           </Link>
           <button className="hover:delay-300 flex justify-start items-center space-x-6 hover:text-gray-300 focus:outline-none focus:bg-indigo-700 focus:text-white hover:bg-indigo-700 text-white font-medium  rounded py-3 pl-4  w-full ">
           <FaRegFlag />
-
-            <p className="text-base leading-4  ">Comments</p>
+          <Link to="/comments">
+             <p className="text-base leading-4 ">Comments</p>
+          </Link>
+            
           </button>
         </div>
       </div>

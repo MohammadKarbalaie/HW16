@@ -11,6 +11,7 @@ import { fetchPostByIdLoader, PostById } from "./pages/post-by-id";
 import { Userlist } from "./pages/user-list";  
 import { UserDetail } from "./pages/UserDetail"; 
 import Home from "./components/home"
+import { CommentsShow } from "./pages/Comments";
 const router = createBrowserRouter([  
   {  
     element: <MainLayout />,  
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {  
         path: "user/:id",     
         element: <UserDetail />,  
+      }, 
+      {  
+        path: "comments",     
+        element: <CommentsShow/>,  
       },  
       {  
         path: "post-info/:id",  

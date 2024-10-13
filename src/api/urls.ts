@@ -7,6 +7,9 @@ export const urls = {
         list:"/users",
         userpost :(userid:number) => `/users/${userid}/posts`
     },
+    comments:{
+      list:"/comments",
+  },
   };
 
 
