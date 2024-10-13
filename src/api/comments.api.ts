@@ -4,7 +4,7 @@ import { IComment } from "../types/comments.type";
 import { IResDto } from "../types/global.type";
 
 interface IFetchCommentsResDto extends IResDto {
-    posts: IComment[];
+    comments: IComment[];
   }
 
   type fetchCommentsListType = () => Promise<IFetchCommentsResDto>;  

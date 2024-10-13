@@ -26,11 +26,13 @@ export const UserDetail = () => {
         <div className="flex flex-col gap-4 py-2 overflow-y-auto px-10">    
             {userPostsQuery.data?.posts.map((post: IPost) => (   
                 <UserPosts  
-                  key={post.id}
-                  id={post.id}
-                  title={post.title}
-                  body={post.body} 
-                />  
+                key={post.id}
+                id={post.id}
+                title={post.title}
+                body={post.body} posts={[]} users={[]} firstName={''} lastName={''} maidenName={''} email={''} image={''} tags={[]} reactions={{
+                  likes: 0,
+                  dislikes: 0
+                }} views={0} userId={0}                />  
             ))}  
         </div>   
     );   
