@@ -1,7 +1,7 @@
  import React from "react";  
 import { useQuery } from "@tanstack/react-query";  
 import { fetchUsersList } from "../api/users.api";  
-import { User } from "../components/userlist";  
+import { User } from "../components/UserList";  
 
 export const Userlist: React.FC = () => {  
   const users = useQuery({  

@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { NavBar } from "../components/navbar";
 import Footer from "../components/footer";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 export const MainLayout: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ export const MainLayout: React.FC = () => {
               <NavBar />
             </div>
             <div className="overflow-auto max-w-[1920px] w-full max-h-[920vh] h-full">
+            <button className="text-3xl absolute mt-2 left-[1860px] hover:text-sky-400"><AiOutlineArrowRight /></button>
               <Outlet />
             </div>
           </div>

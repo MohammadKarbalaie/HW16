@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';  
 import { useQuery } from "@tanstack/react-query";  
-import { IPost } from '../types/posts.type';  
+import { IPost } from '../types/posts.type';   
 import { fetchUsersPost } from '../api/users.api';
-import { UserPosts } from '../components/userpostinfo';
+import { UserPosts } from '../components/UserPostCard';
  
 
 export const UserDetail = () => {  
@@ -14,8 +14,9 @@ export const UserDetail = () => {
     queryKey: ["userposts", userId],  
     queryFn: () => fetchUsersPost(userId),  
     enabled: userId > 0, 
-  });  
+  }); 
 
+  
  
   if (userPostsQuery.isLoading) return <div>Loading...</div>;  
   if (userPostsQuery.isError) return <div>Error fetching posts</div>;  
@@ -29,10 +30,23 @@ export const UserDetail = () => {
                 key={post.id}
                 id={post.id}
                 title={post.title}
-                body={post.body} posts={[]} users={[]} firstName={''} lastName={''} maidenName={''} email={''} image={''} tags={[]} reactions={{
+                body={post.body}
+                posts={[]}
+                users={[]}
+                firstName={''}
+                lastName={''}
+                maidenName={''}
+                email={''}
+                image={''}
+                tags={[]}
+                reactions={{
                   likes: 0,
                   dislikes: 0
-                }} views={0} userId={0}                />  
+                }}
+                views={0}
+                userId={0}
+                Comments={[]}  
+                />                 
             ))}  
         </div>   
     );   

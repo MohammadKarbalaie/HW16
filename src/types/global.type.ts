@@ -1,5 +1,6 @@
 import { IUser } from "./users.type";
 import { IPost } from "./posts.type";
+import { IComment } from "./comments.type";
 
 export interface IResDto {
     skip: number;
@@ -11,4 +12,5 @@ export interface IResDto {
   export interface PostByIdShowName extends IUser,IPost {
     posts: IPost[];
     users: IUser[];
+    Comments :IComment[];
   }

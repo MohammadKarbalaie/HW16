@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchPostsList } from "../api/posts.api";
-import { Post } from "../components/postsshow";
+import { Post } from "../components/PostCard";
 
 export const PostsPage: React.FC = () => {
   const posts = useQuery({

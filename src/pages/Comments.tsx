@@ -1,7 +1,7 @@
 import React from "react";  
 import { useQuery } from "@tanstack/react-query";  
 import { fetchComments } from "../api/comments.api"; 
-import { Comment } from "../components/commentsshow";
+import { Comment } from "../components/CommentCard";
 import { IComment } from "../types/comments.type";
 
 export const CommentsShow: React.FC = () => {  

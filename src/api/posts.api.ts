@@ -1,11 +1,12 @@
 import { urls } from "./urls";
 import { generateClient } from "./client";
-import { IPost } from "../types/posts.type";
+import { IPost} from "../types/posts.type";
 import { IResDto } from "../types/global.type";
 
 interface IFetchPostsResDto extends IResDto {
   posts: IPost[];
 }
+
 type fetchPostsListType = () => Promise<IFetchPostsResDto>;
 export const fetchPostsList: fetchPostsListType = async () => {
   const client = generateClient();

@@ -1,4 +1,7 @@
 export interface IPost {
+    maidenName: string;
+    lastName: string;
+    firstName: string;
     id: number;
     title: string;
     body: string;
@@ -10,4 +13,5 @@ export interface IPost {
     views: number;
     userId: number;
   }
+
 

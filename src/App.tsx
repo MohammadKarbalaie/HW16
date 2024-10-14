@@ -4,11 +4,11 @@ import {
   createBrowserRouter,  
 } from "react-router-dom";  
 
-import { PostsPage } from "./pages/posts";  
+import { PostsPage } from "./pages/PostsList";  
 import { MainLayout } from "./layouts/main";  
 import { NotFound } from "./pages/not-found";  
 import { fetchPostByIdLoader, PostById } from "./pages/post-by-id";  
-import { Userlist } from "./pages/user-list";  
+import { Userlist } from "./pages/User-List";  
 import { UserDetail } from "./pages/UserDetail"; 
 import Home from "./components/home"
 import { CommentsShow } from "./pages/Comments";
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       }, 
       {  
         path: "comments",     
-        element: <CommentsShow/>,  
+        element:<CommentsShow/>,  
       },  
       {  
         path: "post-info/:id",  
