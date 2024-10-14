@@ -42,7 +42,7 @@ export const UserPosts: React.FC<PostByIdShowName> = ({
                     <AiOutlineComment />  
                 </button>   
                 <Modal isOpen={isModalOpen} onClose={closeModal}>  
-                    <h2 className="text-lg font-semibold text-left mt-2">Comments :</h2>  
+                    <h2 className="text-lg font-semibold text-left mt-2 border-b">Comments :</h2>  
                     {comments.length > 0 ? (  
                         <div className="mt-2 ml-1 rounded-xl">  
                             {comments.map(comment => (  

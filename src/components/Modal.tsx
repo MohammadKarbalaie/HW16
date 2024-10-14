@@ -1,5 +1,5 @@
 import React from 'react';  
-
+import { AiOutlineClose } from "react-icons/ai";
 interface ModalProps {  
   isOpen: boolean;  
   onClose: () => void;  
@@ -15,7 +15,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
       <div className="">  
       {children} 
         <div className="flex flex-col items-end justify-end py-3 delay-900 transition-opacity">  
-          <button className="text-white px-2 bg-red-500 py-2 rounded-xl transition-opacity delay-900" onClick={onClose}>Close</button>  
+          <button className="text-white px-2 bg-red-500 py-2 rounded-xl transition-opacity delay-900 hover:bg-red-700" onClick={onClose}><AiOutlineClose /></button>  
         </div>  
       </div>  
     </div>  
