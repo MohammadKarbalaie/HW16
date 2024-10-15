@@ -27,18 +27,17 @@ export const PostById: React.FC = () => {
     <div className="grid grid-cols-1 py-2 overflow-y-auto px-8">  
     {posts.data && (  
       <Postinfo  
-        key={posts.data.id || 0} 
-        id={posts.data.id || 0}  
-        title={posts.data.title || ""} 
-        body={posts.data.body || ""} 
-        tags={(posts.data.tags) +"" || []} 
-        reactions={{  
-          likes: posts.data.reactions.likes || 0,  
-          dislikes: posts.data.reactions.dislikes || 0  
-        }}  
-        views={posts.data.views || 0}  
-        userId={posts.data.userId || 0}        
-      />  
+          key={posts.data.id || 0}
+          id={posts.data.id || 0}
+          title={posts.data.title || ""}
+          body={posts.data.body || ""}
+          tags={(posts.data.tags) + "" || []}
+          reactions={{
+            likes: posts.data.reactions.likes || 0,
+            dislikes: posts.data.reactions.dislikes || 0
+          }}
+          views={posts.data.views || 0}
+          userId={posts.data.userId || 0} posts={[]} users={[]} Comments={[]} firstName={""} lastName={""} maidenName={""} email={""} image={""}      />  
     )}  
   </div>   
   );  
