@@ -15,12 +15,11 @@ export const UserPosts: React.FC<PostByIdShowName> = ({
 
     const openModal = async () => {  
         try {  
-            const response = await fetchPostComments(id); // فرض بر این است که این تابع باز هم نوع مناسب را برمی‌گرداند  
-            setComments(response.comments); // مطمئن باشید که response دارای ویژگی comments است  
+            const response = await fetchPostComments(id);  
+            setComments(response.comments);  
             setIsModalOpen(true);  
         } catch (error) {  
-            console.error("Error fetching comments:", error);  
-            // می‌توانید یک پیام خطا به کاربر نشان دهید  
+            console.error("Error fetching comments:", error);   
         }  
     };  
 

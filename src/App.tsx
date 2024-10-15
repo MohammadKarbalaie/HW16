@@ -41,6 +41,10 @@ const router = createBrowserRouter([
         element: <PostById />,  
         loader: fetchPostByIdLoader,  
       },  
+      // {  
+      //   path: "posts/:id",     
+      //   element:<PostDetails />,  
+      // },  
       {  
         path: "*",  
         element: <NotFound />,  
