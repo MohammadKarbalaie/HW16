@@ -37,9 +37,9 @@ const router = createBrowserRouter([
         element:<CommentsShow/>,  
       },  
       {  
-        path: "post-info/:id",  
+        path: "/posts/:id/comments",  
         element: <PostById />,  
-        loader: fetchPostByIdLoader,  
+         loader: fetchPostByIdLoader,  
       },  
       // {  
       //   path: "posts/:id",     

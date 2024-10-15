@@ -1,42 +1,56 @@
-import { AxiosError } from "axios";
-import { useQuery } from "@tanstack/react-query";
-import {
-  Navigate,
-  useParams,
-  useLoaderData,
-  LoaderFunctionArgs,
-} from "react-router-dom";
+import { AxiosError } from "axios";  
+import { useQuery } from "@tanstack/react-query";  
+import { Navigate, useParams, useLoaderData, LoaderFunctionArgs } from "react-router-dom";  
 
-import { IPost } from "../types/posts.type";
-import { fetchPostById } from "../api/posts.api";
+import { IPost } from "../types/posts.type";  
+import { fetchPostById } from "../api/posts.api";  
+import { Postinfo } from "../components/PosctCommentinfo";  
 
-export const PostById: React.FC = () => {
-  const { id } = useParams();
-  const loaderData = useLoaderData();
-  const validId = !isNaN(Number(id));
+export const PostById: React.FC = () => {  
+  const { id } = useParams();  
+  const loaderData = useLoaderData();  
+  const validId = !isNaN(Number(id));  
 
-  console.log(loaderData);
+  console.log(loaderData);  
 
-  const post = useQuery({
-    queryKey: ["fetching-posts", id],
-    queryFn: () => fetchPostById(Number(id)),
-    enabled: validId,
-  });
+  const posts = useQuery({  
+    queryKey: ["fetching-posts", id],  
+    queryFn: () => fetchPostById(Number(id)),  
+    enabled: validId,  
+  });  
 
-  if (!validId || (post.error as AxiosError)?.status === 404) {
-    return <Navigate to="/404" />;
-  }
+  if (!validId || (posts.error as AxiosError)?.status === 404) {  
+    return <Navigate to="/404" />;  
+  }  
 
-  return <p>post id: {post.data?.id}</p>;
-};
+  return (  
+    <div className="grid grid-cols-1 py-2 overflow-y-auto px-8">  
+    {posts.data && (  
+      <Postinfo  
+        key={posts.data.id || 0} 
+        id={posts.data.id || 0}  
+        title={posts.data.title || ""} 
+        body={posts.data.body || ""} 
+        tags={(posts.data.tags) +"" || []} 
+        reactions={{  
+          likes: posts.data.reactions.likes || 0,  
+          dislikes: posts.data.reactions.dislikes || 0  
+        }}  
+        views={posts.data.views || 0}  
+        userId={posts.data.userId || 0}        
+      />  
+    )}  
+  </div>   
+  );  
+};  
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const fetchPostByIdLoader = async (data: LoaderFunctionArgs) => {
-  let post: IPost | undefined = undefined;
-  try {
-    post = await fetchPostById(Number(data.params.id));
-  } catch (error) {
-    console.log("error", error);
-  }
-  return { post };
+// eslint-disable-next-line react-refresh/only-export-components  
+export const fetchPostByIdLoader = async (data: LoaderFunctionArgs) => {  
+  let post: IPost | undefined = undefined;  
+  try {  
+    post = await fetchPostById(Number(data.params.id));  
+  } catch (error) {  
+    console.log("error", error);  
+  }  
+  return { post };  
 };
