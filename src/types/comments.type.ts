@@ -1,4 +1,4 @@
-export interface IComment { 
+export interface IComments {
   id: number;
   body: string;
   postId: number;
@@ -7,6 +7,5 @@ export interface IComment {
     id: number;
     username: string;
     fullName: string;
-  }
+  };
 }
-

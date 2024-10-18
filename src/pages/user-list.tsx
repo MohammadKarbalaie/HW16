@@ -1,4 +1,4 @@
- import React from "react";  
+import React from "react";  
 import { useQuery } from "@tanstack/react-query";  
 import { fetchUsersList } from "../api/users.api";  
 import { User } from "../components/UserList";  
@@ -22,14 +22,27 @@ export const Userlist: React.FC = () => {
     <div className="grid grid-cols-3 gap-4 py-2 overflow-y-auto px-40">  
       {users.data?.users.map((el) => (  
         <User  
-          key={el.id}  
-          id={el.id}  
-          firstName={el.firstName}  
-          maidenName={el.maidenName}  
-          lastName={el.lastName}  
-          image={el.image}  
-          email={el.email}  
-        />  
+          key={el.id}
+          id={el.id}
+          firstName={el.firstName}
+          maidenName={el.maidenName}
+          lastName={el.lastName}
+          image={el.image}
+          email={el.email} age={0} gender={""} phone={""} username={""} password={""} birthDate={""} bloodGroup={""} height={0} weight={0} eyeColor={""} hair={{
+            color: "",
+            type: ""
+          }} ip={""} address={{
+            address: "",
+            city: "",
+            state: "",
+            stateCode: "",
+            postalCode: "",
+            coordinates: {
+              lat: 0,
+              lng: 0
+            },
+            country: ""
+          }}        />  
       ))}  
     </div>  
   );  

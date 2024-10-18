@@ -27,5 +27,3 @@ export const fetchUsersList : fetchUsersListType = async () => {
       console.log('hi'+response.data)
       return response.data;
     };
-
-
