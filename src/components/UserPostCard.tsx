@@ -1,6 +1,6 @@
 import Modal from "./Modal";  
 import React, { useState } from "react";  
-import { IComment } from "../types/comments.type";  
+import { IComments } from "../types/comments.type";  
 import { AiOutlineComment } from "react-icons/ai";  
 import { PostByIdShowName } from "../types/global.type";  
 import { fetchPostComments } from "../api/comments.api";  
@@ -11,7 +11,7 @@ export const UserPosts: React.FC<PostByIdShowName> = ({
     body,  
 }) => {  
     const [isModalOpen, setIsModalOpen] = useState(false);  
-    const [comments, setComments] = useState<IComment[]>([]);  
+    const [comments, setComments] = useState<IComments[]>([]);  
 
     const openModal = async () => {  
         try {  

@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";  
 import { fetchComments } from "../api/comments.api"; 
 import { Comment } from "../components/CommentCard";
-import { IComment } from "../types/comments.type";
+import { IComments } from "../types/comments.type";
 
 export const CommentsShow: React.FC = () => {  
     const comments = useQuery({  
@@ -21,7 +21,7 @@ React.useEffect(() => {
 
   return (
     <div className="grid grid-cols-3 gap-4 py-2 overflow-y-auto px-40">  
-    {comments.data?.comments.map((comment: IComment) => (  
+    {comments.data?.comments.map((comment: IComments) => (  
       <Comment  
             key={comment.id}
             id={comment.id}

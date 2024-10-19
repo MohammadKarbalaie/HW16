@@ -5,7 +5,7 @@ export const urls = {
       byTag: (tag: string) => `/posts/tag/${tag}`
     },
     users:{
-        list:"/users",
+        list:"?limit=10&page=${page}",
         byId: (id: number) => `/users/${id}`,
         userpost :(userid:number) => `/users/${userid}/posts`
     },
@@ -16,7 +16,4 @@ export const urls = {
       commentbypostid:(id:number)=>`/comments/post/${id}`,
   },
   };
-
-
-
   

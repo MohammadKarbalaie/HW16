@@ -31,13 +31,27 @@ export const PostById: React.FC = () => {
           id={posts.data.id || 0}
           title={posts.data.title || ""}
           body={posts.data.body || ""}
-          tags={(posts.data.tags) + "" || []}
+          tags={'#' + (posts.data.tags).join(' #') || []}
           reactions={{
             likes: posts.data.reactions.likes || 0,
             dislikes: posts.data.reactions.dislikes || 0
           }}
           views={posts.data.views || 0}
-          userId={posts.data.userId || 0} posts={[]} users={[]} Comments={[]} firstName={""} lastName={""} maidenName={""} email={""} image={""}      />  
+          userId={posts.data.userId || 0} posts={[]} users={[]} Comments={[]} firstName={""} lastName={""} maidenName={""} email={""} image={""} age={0} gender={""} phone={""} username={""} password={""} birthDate={""} bloodGroup={""} height={0} weight={0} eyeColor={""} hair={{
+            color: "",
+            type: ""
+          }} ip={""} address={{
+            address: "",
+            city: "",
+            state: "",
+            stateCode: "",
+            postalCode: "",
+            coordinates: {
+              lat: 0,
+              lng: 0
+            },
+            country: ""
+          }}      />  
     )}  
   </div>   
   );  

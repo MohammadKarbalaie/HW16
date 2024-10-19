@@ -4,7 +4,7 @@ import { IComments } from "../types/comments.type";
 import { AiFillEye, AiFillLike, AiOutlineComment, AiOutlineDislike, AiOutlineUser } from "react-icons/ai";  
 import { PostByIdShowName } from "../types/global.type";  
 import { fetchPostComments } from "../api/comments.api";  
-import { FaHashtag } from "react-icons/fa6";
+
 
 export const Postinfo: React.FC<PostByIdShowName> = ({  
     id,   
@@ -46,25 +46,25 @@ export const Postinfo: React.FC<PostByIdShowName> = ({
             </div> 
            <div className="flex flex-col bg-gray-300 rounded-bl-xl pl-1 w-[300px]">
            <div className="flex">
-                    <div className="flex flex-col text-blue-500 text-lg uppercase px-2 py-2">
-                        <p className="flex gap-2 items-center justify-center"><AiFillLike />{likes}</p> 
+                    <div className="flex flex-col text-slate-500  text-lg uppercase px-2 py-2">
+                        <p className="flex gap-1 items-center justify-center"><AiFillLike /><p className="font-semibold">{likes}</p></p> 
                     </div>
                     
-                    <div className="flex flex-col text-red-600 text-lg uppercase px-2 py-2">
-                        <p className="flex gap-2 items-center justify-center"><AiOutlineDislike />{dislikes}</p> 
+                    <div className="flex flex-col text-gray-500 text-lg uppercase px-2 py-2">
+                        <p className="flex gap-1 items-center justify-center"><AiOutlineDislike /><p className="font-semibold">{dislikes}</p></p> 
                     </div>
 
-                    <div className="flex flex-col text-purple-500 text-lg uppercase px-2 py-2">
-                        <p className="flex gap-2 items-center justify-center"><AiFillEye />{views}</p>
+                    <div className="flex flex-col text-slate-500 text-lg uppercase px-2 py-2">
+                        <p className="flex gap-1 items-center justify-center"><AiFillEye /><p className="font-semibold">{views}</p></p>
                     </div>
                     
-                    <div className="flex text-green-500 text-lg uppercase px-2 py-2">
-                        <p className="flex gap-2 items-center justify-center"><AiOutlineUser />{userId}</p> 
+                    <div className="flex text-slate-500 text-lg uppercase px-2 py-2">
+                        <p className="flex gap-1 items-center justify-center"><AiOutlineUser /><p className="font-semibold">{userId}</p></p> 
                     </div>
                 </div>
 
-                <div className="flex flex-col text-orange-600 text-lg uppercase px-2 py-2 -ml-10">
-                    <p className="flex gap-2 items-center justify-center"><FaHashtag />{tags}</p> 
+                <div className="flex flex-col text-gray-700 text-lg uppercase px-2 py-1 w-[270px] ">
+                    <p className="flex gap-2 items-center justify-center"><p className="font-semibold">{tags}</p></p> 
                 </div>
 
                 
